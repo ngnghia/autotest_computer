@@ -4,8 +4,9 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                echo "build process successfully done..."
+              //  echo "build process successfully done..."
                 //bat 'start cmd.exe /c C:\\Users\\DELL\\cucsuc.bat'
+               // bat 'start cmd.exe'
             }
 
         }
