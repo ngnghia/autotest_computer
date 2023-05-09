@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo "build done ..."
                 // bat 'start cmd.exe /c C:\\Users\\DELL\\cucsuc.bat'
-                bat 'start cmd.exe /c'
+                bat 'start cmd.exe'
             }
 
         }
