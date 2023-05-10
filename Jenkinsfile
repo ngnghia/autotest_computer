@@ -4,9 +4,11 @@ pipeline {
         stage('Test') {
             steps {
                 echo "build done ..."
-                bat 'start cmd.exe /c'
-                bat 'D:'
-                bat 'script.bat'
+                bat """
+                    start cmd.exe /c
+                    D:
+                    script.bat
+                    """
             }
         }
     }
