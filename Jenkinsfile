@@ -8,6 +8,7 @@ pipeline {
                     start cmd.exe /c
                     D:
                     script.bat
+                    PART1.docx
                     """
             }
         }
