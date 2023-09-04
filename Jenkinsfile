@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'goofy_goldberg' }
+        docker { image 'cont_api:goofy_goldberg' }
     }
     stages {
         stage('Test') {
