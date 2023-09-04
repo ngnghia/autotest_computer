@@ -1,15 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'goofy_goldberg' }
+    }
     stages {
         stage('Test') {
             steps {
-                echo "build done ..."
-                bat """
-                    start cmd.exe /c
-                    D:
-                    script.bat
-                    PART1.docx
-                    """
+                sh 'docker run -d -v D:/AUTOMATION_Pracice/Reports/report:/app/Allurerp cont_api'
             }
         }
     }
