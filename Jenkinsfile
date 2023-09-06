@@ -21,13 +21,13 @@ pipeline {
  
         stage('Build and Test') {
             steps {
-                // Add build and test steps here
+               echo 'abc'
             }
         }
  
         stage('Cleanup') {
             steps {
-                // Clean up any resources or containers if needed
+                 echo 'bcd'
             }
         }
     }
