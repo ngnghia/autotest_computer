@@ -1,15 +1,21 @@
 pipeline {
     agent any
+ 
     stages {
-        stage('Test') {
+        stage('Checkout') {
             steps {
-                echo "build done ..."
-                bat """
-                    start cmd.exe /c
-                    D:
-                    script.bat
-                    PART1.docx
-                    """
+                // Check out your source code repository (e.g., Git)
+                checkout scm
+            }
+        }
+ 
+        stage('Run Docker Container') {
+            steps {
+                // Run an existing Docker image
+                script {
+                    def dockerImage = 'cont'
+                    docker.image(dockerImage).run('-v /path/on/host:/path/in/container', '-e ENV_VARIABLE=value')
+                }
             }
         }
     }
