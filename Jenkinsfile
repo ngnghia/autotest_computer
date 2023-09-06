@@ -3,7 +3,11 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'node --version'
+                echo "build done ..."
+                bat """
+                    start cmd.exe /c
+                    docker run -d -v D:/AUTOMATION_Pracice/Reports/report:/app/Allurerp cont_dock
+                    """
             }
         }
     }
