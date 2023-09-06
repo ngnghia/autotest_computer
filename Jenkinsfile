@@ -1,11 +1,33 @@
 pipeline {
-    agent {
-        docker { image 'goofy_goldberg' }
-    }
+    agent any
+ 
     stages {
-        stage('Test') {
+        stage('Checkout') {
             steps {
-                sh 'docker run -d -v D:/AUTOMATION_Pracice/Reports/report:/app/Allurerp cont_api'
+                // Check out your source code repository (e.g., Git)
+                checkout scm
+            }
+        }
+ 
+        stage('Run Docker Container') {
+            steps {
+                // Run an existing Docker image
+                script {
+                    def dockerImage = 'cont'
+                    docker.image(dockerImage).run('-d -v D:/AUTOMATION_Pracice/Reports/report:/app/Allurerp')
+                }
+            }
+        }
+ 
+        stage('Build and Test') {
+            steps {
+                // Add build and test steps here
+            }
+        }
+ 
+        stage('Cleanup') {
+            steps {
+                // Clean up any resources or containers if needed
             }
         }
     }
